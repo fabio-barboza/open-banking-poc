@@ -1,0 +1,46 @@
+version: '3.1'
+
+services:
+    postgres:
+        image: postgres:13.1
+        environment:
+            POSTGRES_DB: keycloak
+            POSTGRES_USER: keycloak
+            POSTGRES_PASSWORD: keycloak
+        ports:
+            - 5432:5432
+        volumes:
+            - postgres-data:/var/lib/postgresql/data
+            - ./postgres/keycloak.sql:/docker-entrypoint-initdb.d/init.sql
+        networks:
+            - openbanking-network
+
+    keycloak:
+        image: jboss/keycloak:12.0.4
+        restart: always
+        environment:
+            DB_VENDOR: POSTGRES
+            DB_ADDR: postgres
+            DB_DATABASE: keycloak
+            DB_USER: keycloak
+            DB_SCHEMA: public
+            DB_PASSWORD: keycloak
+            KEYCLOAK_USER: admin
+            KEYCLOAK_PASSWORD: admin
+            KEYCLOAK_IMPORT: /tmp/realm-export.json
+        volumes:
+            - ./keycloak/realm-export.json:/tmp/realm-export.json
+        ports:
+            - 8081:8080
+        networks:
+            - openbanking-network
+        depends_on:
+            - postgres
+
+volumes:
+    postgres-data:
+        driver: local
+
+networks:
+    openbanking-network:
+        driver: bridge
