@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            body {
+              background-color: #005a9a;
+              text
+            }
+            #divParticipants {
+                border: solid;
+                height: 400px;
+                overflow:auto;
+            }
+        </style>
+    </head>
+    <body>
+        <img src="../images/logo-boavista.png">
+        <br>
+        <br>
+        <p style="color:white;">Open Banking Participants</p>
+        <br>
+        <div id="divParticipants"></div>
+        <br>
+        <br>
+        <a href="/protected/welcome.html">Welcome</a>&nbsp;&nbsp;&nbsp;<a href="/logout">Logout</a>
+    </body>
+    <script>
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.onreadystatechange = function() {
+            if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                document.getElementById("divParticipants").innerHTML = xmlHttp.responseText;
+        }
+        xmlHttp.open("GET", "/api/participants", true); // true for asynchronous
+        xmlHttp.send(null);
+    </script>
+</html>
