@@ -1,6 +1,7 @@
 {
   "id": "BoaVistaOpenBanking",
   "realm": "BoaVistaOpenBanking",
+  "displayName": "Login Boa Vista Open Banking",
   "notBefore": 1617287946,
   "revokeRefreshToken": false,
   "refreshTokenMaxReuse": 0,

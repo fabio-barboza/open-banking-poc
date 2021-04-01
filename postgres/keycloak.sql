@@ -5,7 +5,7 @@
 -- Dumped from database version 13.1 (Debian 13.1-1.pgdg100+1)
 -- Dumped by pg_dump version 13.2
 
--- Started on 2021-04-01 11:42:56 -03
+-- Started on 2021-04-01 17:49:11 -03
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -1792,14 +1792,14 @@ COPY public.client (id, enabled, full_scope_allowed, client_id, not_before, publ
 cd8c3df3-9ec8-404d-ae64-16c51ab33cb6	t	f	broker	0	f	195b6106-2c56-4a81-ac47-f75f7fba880b	\N	f	\N	f	master	openid-connect	0	f	f	${client_broker}	f	client-secret	\N	\N	\N	t	f	f	f
 0a7c13ea-adda-4f53-b892-427176229a4f	t	f	security-admin-console	0	t	4f056193-8988-4178-8625-fc05145c7e06	/admin/master/console/	f	\N	f	master	openid-connect	0	f	f	${client_security-admin-console}	f	client-secret	${authAdminUrl}	\N	\N	t	f	f	f
 98588a3b-fb07-434f-bad2-4718f3d20e96	t	f	admin-cli	0	t	cd32c3cf-7482-4efc-8f15-068d48370b69	\N	f	\N	f	master	openid-connect	0	f	f	${client_admin-cli}	f	client-secret	\N	\N	\N	f	f	t	f
-02112e74-42ef-41cb-bc87-b1dd2c1a01b9	t	t	BoaVistaOpenBanking-realm	0	f	a07ffe56-f58d-43e1-b809-9564395c2ffe	\N	t	\N	f	master	\N	0	f	f	BoaVistaOpenBanking Realm	f	client-secret	\N	\N	\N	t	f	f	f
-65eb4904-f8fc-4f47-8e79-b617c18ead3c	t	f	account	0	f	**********	/realms/BoaVistaOpenBanking/account/	f	\N	f	BoaVistaOpenBanking	openid-connect	0	f	f	${client_account}	f	client-secret	${authBaseUrl}	\N	\N	t	f	f	f
 f2e03981-2f27-452c-83a2-3cd82c2889b0	t	f	account-console	0	t	**********	/realms/BoaVistaOpenBanking/account/	f	\N	f	BoaVistaOpenBanking	openid-connect	0	f	f	${client_account-console}	f	client-secret	${authBaseUrl}	\N	\N	t	f	f	f
 a3a1a86a-4510-42c9-b0e1-4d70453dca2f	t	f	admin-cli	0	t	**********	\N	f	\N	f	BoaVistaOpenBanking	openid-connect	0	f	f	${client_admin-cli}	f	client-secret	\N	\N	\N	f	f	t	f
 4428a966-7eac-49df-b9c6-a984988a10ea	t	f	broker	0	f	**********	\N	f	\N	f	BoaVistaOpenBanking	openid-connect	0	f	f	${client_broker}	f	client-secret	\N	\N	\N	t	f	f	f
 582fe8a6-b1c1-413f-8eb3-19cc452b6a2e	t	f	realm-management	0	f	**********	\N	t	\N	f	BoaVistaOpenBanking	openid-connect	0	f	f	${client_realm-management}	f	client-secret	\N	\N	\N	t	f	f	f
-f18c46df-f2e5-4cd0-af01-0e9c6865b749	t	f	security-admin-console	0	t	**********	/admin/BoaVistaOpenBanking/console/	f	\N	f	BoaVistaOpenBanking	openid-connect	0	f	f	${client_security-admin-console}	f	client-secret	${authAdminUrl}	\N	\N	t	f	f	f
 69f890ee-8261-43c5-8f9c-efee0753b279	t	t	boavistaopenbanking	0	f	81ba0b2a-31a4-424a-a618-65f67d54f09b	\N	f	\N	f	BoaVistaOpenBanking	openid-connect	-1	f	f	\N	f	client-secret	\N	\N	\N	t	t	t	f
+02112e74-42ef-41cb-bc87-b1dd2c1a01b9	t	t	BoaVistaOpenBanking-realm	0	f	a07ffe56-f58d-43e1-b809-9564395c2ffe	\N	t	\N	f	master	\N	0	f	f	BoaVistaOpenBanking Realm	f	client-secret	\N	\N	\N	t	f	f	f
+f18c46df-f2e5-4cd0-af01-0e9c6865b749	t	f	security-admin-console	0	t	**********	/admin/BoaVistaOpenBanking/console/	f	\N	f	BoaVistaOpenBanking	openid-connect	0	f	f	${client_security-admin-console}	f	client-secret	${authAdminUrl}	\N	\N	t	f	f	f
+65eb4904-f8fc-4f47-8e79-b617c18ead3c	t	f	account	0	f	**********	/realms/BoaVistaOpenBanking/account/	f	\N	f	BoaVistaOpenBanking	openid-connect	0	f	f	${client_account}	f	client-secret	${authBaseUrl}	\N	\N	t	f	f	f
 \.
 
 
@@ -3208,13 +3208,11 @@ displayName	Keycloak	master
 displayNameHtml	<div class="kc-logo-text"><span>Keycloak</span></div>	master
 offlineSessionMaxLifespanEnabled	false	master
 offlineSessionMaxLifespan	5184000	master
-_browser_header.contentSecurityPolicyReportOnly		BoaVistaOpenBanking
-_browser_header.xContentTypeOptions	nosniff	BoaVistaOpenBanking
-_browser_header.xRobotsTag	none	BoaVistaOpenBanking
-_browser_header.xFrameOptions	SAMEORIGIN	BoaVistaOpenBanking
-_browser_header.contentSecurityPolicy	frame-src 'self'; frame-ancestors 'self'; object-src 'none';	BoaVistaOpenBanking
-_browser_header.xXSSProtection	1; mode=block	BoaVistaOpenBanking
-_browser_header.strictTransportSecurity	max-age=31536000; includeSubDomains	BoaVistaOpenBanking
+clientSessionIdleTimeout	0	BoaVistaOpenBanking
+clientSessionMaxLifespan	0	BoaVistaOpenBanking
+clientOfflineSessionIdleTimeout	0	BoaVistaOpenBanking
+clientOfflineSessionMaxLifespan	0	BoaVistaOpenBanking
+displayName	Login Boa Vista Open Banking	BoaVistaOpenBanking
 bruteForceProtected	false	BoaVistaOpenBanking
 permanentLockout	false	BoaVistaOpenBanking
 maxFailureWaitSeconds	900	BoaVistaOpenBanking
@@ -3223,14 +3221,10 @@ waitIncrementSeconds	60	BoaVistaOpenBanking
 quickLoginCheckMilliSeconds	1000	BoaVistaOpenBanking
 maxDeltaTimeSeconds	43200	BoaVistaOpenBanking
 failureFactor	30	BoaVistaOpenBanking
-offlineSessionMaxLifespanEnabled	false	BoaVistaOpenBanking
-offlineSessionMaxLifespan	5184000	BoaVistaOpenBanking
-clientSessionIdleTimeout	0	BoaVistaOpenBanking
-clientSessionMaxLifespan	0	BoaVistaOpenBanking
-clientOfflineSessionIdleTimeout	0	BoaVistaOpenBanking
-clientOfflineSessionMaxLifespan	0	BoaVistaOpenBanking
 actionTokenGeneratedByAdminLifespan	43200	BoaVistaOpenBanking
 actionTokenGeneratedByUserLifespan	300	BoaVistaOpenBanking
+offlineSessionMaxLifespanEnabled	false	BoaVistaOpenBanking
+offlineSessionMaxLifespan	5184000	BoaVistaOpenBanking
 webAuthnPolicyRpEntityName	keycloak	BoaVistaOpenBanking
 webAuthnPolicySignatureAlgorithms	ES256	BoaVistaOpenBanking
 webAuthnPolicyRpId		BoaVistaOpenBanking
@@ -3249,6 +3243,13 @@ webAuthnPolicyRequireResidentKeyPasswordless	not specified	BoaVistaOpenBanking
 webAuthnPolicyUserVerificationRequirementPasswordless	not specified	BoaVistaOpenBanking
 webAuthnPolicyCreateTimeoutPasswordless	0	BoaVistaOpenBanking
 webAuthnPolicyAvoidSameAuthenticatorRegisterPasswordless	false	BoaVistaOpenBanking
+_browser_header.contentSecurityPolicyReportOnly		BoaVistaOpenBanking
+_browser_header.xContentTypeOptions	nosniff	BoaVistaOpenBanking
+_browser_header.xRobotsTag	none	BoaVistaOpenBanking
+_browser_header.xFrameOptions	SAMEORIGIN	BoaVistaOpenBanking
+_browser_header.contentSecurityPolicy	frame-src 'self'; frame-ancestors 'self'; object-src 'none';	BoaVistaOpenBanking
+_browser_header.xXSSProtection	1; mode=block	BoaVistaOpenBanking
+_browser_header.strictTransportSecurity	max-age=31536000; includeSubDomains	BoaVistaOpenBanking
 \.
 
 
@@ -3350,10 +3351,10 @@ COPY public.redirect_uris (client_id, value) FROM stdin;
 90713a4f-114e-426d-976f-1166acb8dd92	/realms/master/account/*
 429379c0-f4c2-47c0-abf0-20abaaaf7116	/realms/master/account/*
 0a7c13ea-adda-4f53-b892-427176229a4f	/admin/master/console/*
-65eb4904-f8fc-4f47-8e79-b617c18ead3c	/realms/BoaVistaOpenBanking/account/*
 f2e03981-2f27-452c-83a2-3cd82c2889b0	/realms/BoaVistaOpenBanking/account/*
-f18c46df-f2e5-4cd0-af01-0e9c6865b749	/admin/BoaVistaOpenBanking/console/*
 69f890ee-8261-43c5-8f9c-efee0753b279	http://localhost:8080/*
+f18c46df-f2e5-4cd0-af01-0e9c6865b749	/admin/BoaVistaOpenBanking/console/*
+65eb4904-f8fc-4f47-8e79-b617c18ead3c	/realms/BoaVistaOpenBanking/account/*
 \.
 
 
@@ -6012,7 +6013,7 @@ ALTER TABLE ONLY public.identity_provider_config
     ADD CONSTRAINT fkdc4897cf864c4e43 FOREIGN KEY (identity_provider_id) REFERENCES public.identity_provider(internal_id);
 
 
--- Completed on 2021-04-01 11:42:57 -03
+-- Completed on 2021-04-01 17:49:12 -03
 
 --
 -- PostgreSQL database dump complete
