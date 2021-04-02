@@ -6,16 +6,37 @@
         <style>
             body {
               background-color: #005a9a;
-              text
             }
             #divParticipants {
                 border: solid;
                 height: 400px;
                 overflow:auto;
             }
+            #error {
+                text-align: center;
+                vertical-align: middle;
+                line-height: 300px;
+                color: red;
+            }
         </style>
+        <script>
+            function loadData() {
+                var xmlHttp = new XMLHttpRequest();
+                xmlHttp.open("GET", "/api/participants", true);
+                xmlHttp.onreadystatechange = function() {
+                    if (xmlHttp.readyState == 4) {
+                        if (xmlHttp.status == 200) {
+                            document.getElementById("divParticipants").innerHTML = xmlHttp.responseText;
+                        } else {
+                            document.getElementById("divParticipants").innerHTML = "<div id='error'><h2>Access Denied!!!</h2><div>";
+                        }
+                    }
+                }
+                xmlHttp.send();
+            }
+        </script>
     </head>
-    <body>
+    <body onload="loadData()">
         <img src="../images/logo-boavista.png">
         <br>
         <br>
@@ -26,13 +47,4 @@
         <br>
         <a href="/protected/welcome.html">Welcome</a>&nbsp;&nbsp;&nbsp;<a href="/logout">Logout</a>
     </body>
-    <script>
-        var xmlHttp = new XMLHttpRequest();
-        xmlHttp.onreadystatechange = function() {
-            if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-                document.getElementById("divParticipants").innerHTML = xmlHttp.responseText;
-        }
-        xmlHttp.open("GET", "/api/participants", true); // true for asynchronous
-        xmlHttp.send(null);
-    </script>
 </html>
