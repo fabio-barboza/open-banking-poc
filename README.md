@@ -1,7 +1,7 @@
 # open-banking-poc
-Boa Vista Open Banking POC
+Open Banking POC
 
-Prova de conceito da Boa Vista para testa um fluxo hibrido utilizando Spring Boot com o Keycloak
+Prova de conceito para autenticação para testar um fluxo hibrido utilizando Spring Boot com o Keycloak
 
 Pré requsitos: docker e java instalados
 
