@@ -1,6 +1,7 @@
 # open-banking-poc
 
-##English instrcutions
+English instrcutions
+
 Open Banking POC
 
 Concept proof to test a hibrid flow using Spring boot and Keycloak
@@ -11,7 +12,9 @@ Windows: To start and stop scripts: start_env.bat and stop_env.bat
 Linux: To start and stop scripts: start_env.sh and stop_env.sh
 
 
-##Instruções em português
+
+Instruções em português
+
 Open Banking POC
 
 Prova de conceito para autenticação para testar um fluxo hibrido utilizando Spring Boot com o Keycloak
